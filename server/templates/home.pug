@@ -1,0 +1,12 @@
+extends _layout
+
+block vars
+  - var title = config.siteName;
+
+block main
+  .container.narrow
+    h1 #{config.siteName} Courses
+    //- for c in courses || []
+    //-  +course(c)
+    //- include _footer
+    +course('triangles')

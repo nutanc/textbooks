@@ -14,6 +14,7 @@ By the early 19th century, explorers had discovered most of the world. Trade and
 transportation was booming between distant countries, and this created a need
 for _accurate maps_ of the entire planet.
 
+
 Today we have satellites that can take photos from above – but 200 years ago,
 creating maps was a difficult and time consuming task. It was done by
 mathematicians like [Radhanath Sikdar](bio:sikdar), who worked on the _Great
@@ -1273,6 +1274,75 @@ equilateral triangle using straight-edge and compass.
 > id: trigonometry
 > section: trigonometry
 
+::: column.grow
+Are you sitting in a room? Just look across. Do you see a wall?
+Let's say this can be represented like the image to the side. If I ask you to measure the height,
+how can you do it?
+Which is easier to measure? The length or the height? It's the [[length|height]].
+
+_{span.reveal(when="blank-0")} Obviously it's the length because it is on the floor. You can use a tape or just measure with your feet. 
+But how can you climb up a wall to measure the height. We need better tools and methods to measure heights of tall things like mountains or buildings._
+
+::: column(width=240)
+
+    x-geopad(width=280 height=260): svg
+      circle(name="a" x="point(30,220)" label="Person")
+      circle(name="b" x="point(210,40)" label="Wall Top")
+      circle(name="c" x="point(210,220)" label="Wall Bottom")
+      path.blue(x="segment(b,c)" label="Wall" target="opp")
+      
+
+:::
+
+---
+> id: trigonometry-intro
+> section: trigonometry-intro
+> goals: s0 s1
+
+::: column(width=300)
+
+    x-geopad.sticky(width=300 height=260 tools="move|line" projections="no"): svg
+      circle(name="a" x="point(30,220)" label="Person")
+      circle(name="b" x="point(210,40)" label="Wall Top")
+      circle(name="c" x="point(210,220)" label="Wall Bottom")
+      circle.red.reveal(name="e" x="point(150,225)" label="6cm" when="s1" animation="pop")
+      path.red.reveal(name="d" x="angle(b,a,c)" label="45" when="blank-0" animation="pop")
+      path.red.reveal(name="f" x="angle(a,c,b)" label="90" when="blank-1" animation="pop")
+      path.blue(x="segment(b,c)" label="Wall" target="opp")
+
+::: column.grow
+Now, please draw a line from "Person" point to "Wall Bottom" point. 
+_{span.reveal(when="s1")}Next draw a line from "Person" point to "Wall Top" point
+._
+_{span.reveal(when="s0")}What do you see? It's in the shape of a [[triangle]]
+._  
+
+_{span.reveal(when="blank-0")}Very good. As you can see triangles are every where :)
+Now let's see what else we can deduce. We can see that length of the floor is 6cm and 
+when the person look up at the ceiling his eyes make a 45 degree angle. We also know that 
+the angle between the wall and the floor is [[90|180]] degrees.
+._  
+
+_{span.reveal(when="blank-1")}So, we have a right angle triangle and one of it's angle is 45 degrees.
+That makes this an [[isosceles|equilateral]] triangle.
+._ 
+_{span.reveal(when="blank-2")} And from the properties of right angle isosceles triangles we know that opposite side=adjacent size.
+In our scenario we see that the adjacent side(floor) length is 6cm. So the opposite side(height) should be [[6|12|18]]cm
+._ 
+:::
+
+
+_{span.reveal(when="blank-3")}
+Congratulations! By observing that we have a triangle shape in the real world and using our knowledge of triangles we were 
+able to calculate the height of the wall without climbing it :).
+Let us now move onto a formal introduction to Trigonometry.
+._
+
+---
+> id: trigonometry-0
+> section: trigonometry-0
+
+### Introduction to Trigonometry
 So far we have seen relationships between the __angles__ of triangles (e.g.
 they always sum up to 180°) and relationships between the __sides__ of triangles
 (e.g. Pythagoras). But there is nothing that _connects_ the size of angles and
@@ -1307,9 +1377,75 @@ the __[{.blue}opposite](target:opp)__ (which is opposite angle __{.m-red}α__).
 
 :::
 
+Let us look at the below 4 right angle triangles
+
+::: column(width=240)
+    x-geopad(width=240 height=160): svg
+      circle(name="a" x="point(30,120)")
+      circle(name="b" x="point(210,40)")
+      circle(name="c" x="point(210,120)")
+      path(x="angle(a,c,b)")
+      path.red(x="angle(b,a,c)" label="30")
+      path.yellow(x="segment(a,b)" label="10cm" target="hyp")
+      path.blue(x="segment(b,c)" label="5cm" target="opp")
+      path.green(x="segment(a,c)" label="Adjacent" target="adj")
+::: column(width=240)
+    x-geopad(width=240 height=160): svg
+      circle(name="a" x="point(30,120)")
+      circle(name="b" x="point(210,40)")
+      circle(name="c" x="point(210,120)")
+      path(x="angle(a,c,b)")
+      path.red(x="angle(b,a,c)" label="30")
+      path.yellow(x="segment(a,b)" label="28cm" target="hyp")
+      path.blue(x="segment(b,c)" label="14cm" target="opp")
+      path.green(x="segment(a,c)" label="Adjacent" target="adj")
+::: column(width=240)
+    x-geopad(width=240 height=160): svg
+      circle(name="a" x="point(30,120)")
+      circle(name="b" x="point(210,40)")
+      circle(name="c" x="point(210,120)")
+      path(x="angle(a,c,b)")
+      path.red(x="angle(b,a,c)" label="30")
+      path.yellow(x="segment(a,b)" label="8cm" target="hyp")
+      path.blue(x="segment(b,c)" label="4cm" target="opp")
+      path.green(x="segment(a,c)" label="Adjacent" target="adj")
+::: column(width=240)
+    x-geopad(width=240 height=160): svg
+      circle(name="a" x="point(30,120)")
+      circle(name="b" x="point(210,40)")
+      circle(name="c" x="point(210,120)")
+      path(x="angle(a,c,b)")
+      path.red(x="angle(b,a,c)" label="30")
+      path.yellow(x="segment(a,b)" label="22cm" target="hyp")
+      path.blue(x="segment(b,c)" label="11cm" target="opp")
+      path.green(x="segment(a,c)" label="Adjacent" target="adj")
+
+:::
+
+Please fill up the values in the below table based on the images above:
+
+::: .overflow-wrap.overflow-table
+
+|S.No| Angle(`theta`)| Opposite Side | Hypotenuse  | `OppositeSide/Hypotenuse`|
+|----| ------------- |-------------  |-----        | ----------------------    |
+|1   |    30           |        [[5]]       |     [[10]]        |        [[0.5 (Specify the answer as a decimal. For example 0.2.)]]                   |
+|2   |    30           |        [[14]]       |      [[28]]       |       [[0.5]]                    |           
+|3   |    30           |        [[4]]       |      [[8]]       |         [[0.5]]                  |
+|4   |    30           |        [[11]]       |      [[22]]       |       [[0.5]]                    |
+{.grid}
+:::
+_{span.reveal(when="blank-11")} As you can see, though the opposite side and hypotenuse values are changing, as long as `theta` is 30 degrees
+the ratio of opposite side/hypotenuse always remains as `1/2` or 0.5.
+._
+
+_{span.reveal(when="blank-11")} Experiment with different triangles and see if this holds. Experiment to see if the ratio of adjacent side / hypotenuse also has this property
+._
+
+_{.span.reveal(when="blank-11")}
 There are many different triangles that have angles __{.m-red}α__ and 90°, but
 from the [AA condition](gloss:triangle-aa) we know that they are all
 [[similar|congruent]]:
+._
 
     figure: img(src="images/triangles.svg" width=600 height=240)
 
@@ -1345,6 +1481,7 @@ a 3-letter abbreviation:
       li.display.md __Sine:__ `sin(class(α,"m-red b")) = class("Opposite","m-blue b") / class("Hypotenuse","m-yellow b")`
       li.display.md __Cosine:__ `cos(class(α,"m-red b")) = class("Adjacent","m-green b") / class("Hypotenuse","m-yellow b")`
       li.display.md __Tangent:__ `tan(class(α,"m-red b")) = class("Opposite","m-blue b") / class("Adjacent","m-green b")`
+Easy way to remember  name and sides: SOH-CAH-TOA
 
 ::: column(width=240)
 
