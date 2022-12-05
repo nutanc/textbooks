@@ -1447,10 +1447,11 @@ from the [AA condition](gloss:triangle-aa) we know that they are all
 [[similar|congruent]]:
 ._
 
-    figure: img(src="images/triangles.svg" width=600 height=240)
+    figure: img.reveal(src="images/triangles.svg" width=600 height=240 when="blank-11")
 
 ---
 > id: trig-functions
+### Trigonometric ratios
 
 Since all of these triangles are similar, we know that their sides are
 proportional. In particular, the following ratios are the same for all of these
@@ -1467,11 +1468,11 @@ got lots of similar, right-angled triangles. All of these triangles have the
 same ratios of sides. Since __{.m-red}α__ was our only variable, there must be
 some relationship between __{.m-red}α__ and those ratios.
 
-These relationships are the __Trigonometric functions__ – and there are three of
+These relationships are the __Trigonometric ratios__ – and there are three of
 them:
 
 ::: .theorem
-The three Trigonometric functions are relationships between the angles and the
+The three Trigonometric ratios are relationships between the angles and the
 ratios of sides in a right-angles triangle. They each have a name, as well as
 a 3-letter abbreviation:
 
@@ -1498,168 +1499,434 @@ Easy way to remember  name and sides: SOH-CAH-TOA
 :::
 :::
 
+Let's expand on this idea. We have seen
+
+{.text-center} `class("Opposite","m-blue b") / class("Hypotenuse","m-yellow b")`
+_{span.space}_
+`class("Adjacent","m-green b") / class("Hypotenuse","m-yellow b")`
+_{span.space}_
+`class("Opposite","m-blue b") / class("Adjacent","m-green b")`
+
+and given names for these ratios. 
+
+What about the inverse of these ratios?
+
+{.text-center} `class("Hypotenuse","m-yellow b") / class("Opposite","m-blue b")`
+_{span.space}_
+`class("Hypotenuse","m-yellow b") / class("Adjacent","m-green b")`
+_{span.space}_
+`class("Adjacent","m-green b") / class("Opposite","m-blue b")`
+
+Let's give these ratios also a name.
+::: .theorem
+The inverse of the above ratios also each have a name, as well as
+a 3-letter abbreviation:
+
+::: column.grow
+
+    ul
+      li.display.md __Cosecant:__ `cosec(class(α,"m-red b")) = class("Hypotenuse","m-yellow b") / class("Opposite","m-blue b")`
+      li.display.md __Secant:__ `sec(class(α,"m-red b")) = class("Hypotenuse","m-yellow b") / class("Adjacent","m-green b")`
+      li.display.md __Cotangent:__ `cot(class(α,"m-red b")) = class("Adjacent","m-green b") / class("Opposite","m-blue b")`
+
+::: column(width=240)
+
+    x-geopad(width=240 height=160): svg
+      circle(name="a" x="point(30,120)")
+      circle(name="b" x="point(210,40)")
+      circle(name="c" x="point(210,120)")
+      path(x="angle(a,c,b)")
+      path.red(x="angle(b,a,c)" label="α")
+      path.yellow(x="segment(a,b)" label="Hypotenuse")
+      path.blue(x="segment(b,c)" label="Opposite")
+      path.green(x="segment(a,c)" label="Adjacent")
+
+:::
+:::
+
+These are the 6 trigonometric ratios of an acute angle. The angle `class(α,"m-red b")` is related to the sides of the triangle in these 6 different ways only.
+
+::: column.grow
+
+Now, when we consider `class(β,"m-green b")`
+
+`sin(class(β,"m-green b"))`=[[AC/AB|BC/AB|AC/BC]]
+`cos(class(β,"m-green b"))`=[[BC/AB|AC/AB|AC/BC]]
+`tan(class(β,"m-green b"))`=[[AC/BC|BC/AB|AC/AB]]
+
+::: column(width=240)
+
+    x-geopad(width=240 height=160): svg
+      circle(name="a" x="point(30,120)" label="A")
+      circle(name="b" x="point(210,40)" label="B")
+      circle(name="c" x="point(210,120)" label="C")
+      path.green(x="angle(c,b,a)" label="β")
+      path.red(x="angle(b,a,c)" label="α")
+      path.yellow(x="segment(a,b)" label="3k")
+      path.blue(x="segment(b,c)" label="k")
+      path.green(x="segment(a,c)")
+
+:::
+
+
 ---
 > id: trig-functions-1
 
-{.todo} COMING SOON – More on Trigonometry
+::: column.grow
 
-    // {.todo} COMING SOON – Abbreviations: sin x, cos y
-    // {.todo} COMING SOON – Using calculators
-    // {.todo} COMING SOON – Examples
-    // {.todo} COMING SOON – Rationalize the denominator
+Let's consider the triangle ABC. Two sides are given, AB=3k and BC=k. From trigonometric ratios we can find the value of [[sin|cos|tan]].
 
----
-> id: inverse-trig
+{.reveal(when="blank-0")} sin A=`1/3`.To find the values of cos A and tan A we do not have the value for AC. We know that ABC is a [[right angled|isosceles|equilateral]] triangle. And we know two sides, AB and BC.So if we have to find the third side AC we can use the [[pythagoras]] theorem.
 
-### Inverse Trignometric Functions
-
-{.todo} COMING SOON – Inverse functions
-
-    // The word inverse is probably familiar to you. In mathematics, once you learn how
-    // to do an operation, you also learn how to “undo” it. For example, you may
-    // remember that addition and subtraction are considered inverse operations.
-    // Multiplication and division are also inverse operations. In algebra you used
-    // inverse operations to solve equations and inequalities. When we apply the word
-    // inverse to the trigonometric ratios, we can find the acute angle measures within
-    // a right triangle. Normally, if you are given an angle and a side of a right
-    // triangle, you can find the other two sides, using sine, cosine or tangent. With
-    // the inverse trig ratios, you can find the angle measure, given two sides.
-
-    // On most scientific and graphing calculators, the buttons look like
-    // [SIN−1],[COS−1], and [TAN−1]. Typically, you might have to hit a shift
-    // button to access these functions.
-
----
-
-## Sine and Cosine Rules
-
-> section: sine-cosine-rule
-> id: sine-cosine-rule
-
-So far, all you’ve learned about Trigonometry only works in right-angled
-triangles. But most triangles are not right-angled, and there are two important
-results that work for all triangles
+:::
 
 ::: column.grow
 ::: .theorem
-__Sine Rule__<br>
-In a triangle with sides _a_, _b_ and _c_, and angles _A_, _B_ and _C_,
+__Solving for AC__<br>
 
-{.text-center} `(sin(A))/a = (sin(B))/b = (sin(C))/c`
+{.text-center} `AC^2 = AB^2 - BC^2=(3k)^2-(k)^2=8k^2=(2 sqrt(2) k)^2`
+
+{.text-center} `AC = +-(2 sqrt(2) k)`
+
+{.text-center} `AC = (2 sqrt(2) k)`
+:::
 :::
 
-    // {.todo} Use Law of Sines when given:
-    // An angle and its opposite side.
-    // Any two angles and one side.
+::: column(width=240)
+
+    x-geopad(width=240 height=160): svg
+      circle(name="a" x="point(30,120)" label="A")
+      circle(name="b" x="point(210,40)" label="B")
+      circle(name="c" x="point(210,120)" label="C")
+      path.red(x="angle(c,a,b)" label="α")
+      path.yellow(x="segment(a,b)" label="3k")
+      path.blue(x="segment(b,c)" label="k")
+      path.green(x="segment(a,c)" label="(2 sqrt(2) k)")
+
+
+::: column.grow
+
+We now have all the sides of the triangle. 
+
+cos A=[[2 sqrt(2)/3 | 1/3 |1/2 sqrt(2)]]
+tan A=[[1/2 sqrt(2) | 1/3 |2 sqrt(2)/3]]
+
+:::
+
+::: column.grow
+
+Let's do a couple more examples. From the figure we see 
+
+tan A=[[4/3|3/4|1/4]]
+
+Apply Pythagoras theorem.
+
+AC=[[5k]]
+
+sin A=[[4/5|3/5|3/4]]
+
+cos A=[[3/5|4/5|3/4]]
+
+::: column(width=240)
+
+    x-geopad(width=240 height=160): svg
+      circle(name="a" x="point(30,120)" label="A")
+      circle(name="c" x="point(210,40)" label="C")
+      circle(name="b" x="point(210,120)" label="B")
+      path.red(x="angle(c,a,b)" )
+      path.yellow(x="segment(a,b)" label="3k" )
+      path.blue(x="segment(b,c)" label="4k")
+      path.green(x="segment(a,c)" )
+
+:::
+
+
+---
+> id: trig-ratios45
+
+### Trigonometric Ratios of Some Specific Angles
+
+
+::: column.grow
+
+Look at the triangle to the side
+
+△AFD has an ∠DAF of 45 degrees.
+
+It is a right angled triangle.
+
+If ∠A=45 then ∠D=[[45]]
+
+This means DF=[[AF]]
+
+::: column(width=240)
+
+    x-geopad(width=240 height=240): svg
+      circle(name="a" x="point(30,220)" label="A")
+      circle(name="d" x="point(160,80)" label="D")
+      circle(name="f" x="point(160,220)" label="F")
+      path.red(x="angle(d,a,f)" label="45")
+      path.green(x="segment(a,d)" )
+      path.blue(x="segment(d,f)" )
+      path.blue(x="segment(a,f)" )
+
+:::
 
 ::: column.grow
 ::: .theorem
-__Cosine Rule__<br>
-In a triangle with sides _a_, _b_ and _c_, and angles _A_, _B_ and _C_,
+{.reveal(when="blank-1")} Let us assume DF=AF=a.
 
-{.text-center} `c^2 = a^2 + b^2 - 2a b cos(C)`
-`b^2 = c^2 + a^2 - 2c a cos(B)`
-`a^2 = b^2 + c^2 - 2b c cos(A)`
+From Pythogoras theorem we have
+
+`AD^2=AF^2+DF^2`
+
+`AD^2=a^2+a^2=2a^2`
+
+`AD=a*sqrt(2)`
+
+sin A = sin 45 = `blank("DF","AD","AF")/blank("AD","DF","AF")` _{span.reveal(when="blank-3")} = `a/ (a*sqrt(2))` = `1/sqrt(2)`._
+
+cos A = cos 45 = `blank("AF","AD","DF")/blank("AD","DF","AF")` _{span.reveal(when="blank-3")} = `a/ (a*sqrt(2))` = `1/sqrt(2)`._
+
+tan A = tan 45 = `blank("DF","AD","AF")/blank("AF","DF","AD")` _{span.reveal(when="blank-3")} = `a/ a` = `1`._
+
+
 :::
-
-    // {.todo} Even though there are three formulas, they are all very similar. First, notice
-    // that whatever angle is in the cosine, the opposite side is on the other side of
-    // the equal sign.
-    //
-    // {.todo} Use Law of Cosines when given:
-    // Two sides and the included angle.
-    // All three sides.
-:::
-
----
-> id: trigonometry-4
-
-{.todo} COMING SOON – Proof, examples and applications
-
-    // TODO Future stuff about trigonometry
-
----
-> id: mountains
-
-### The Great Trigonometric Survey
-
-Do you still remember the quest to find the highest mountain on Earth from the
-[introduction](/course/triangles/introduction)? With Trigonometry, we finally
-have the tools to do it!
-
-::: .sticky-wrap
-
-    figure.sticky.mountain
-      x-geopad.no-background(width=760 height=250): svg
-        image(href="images/mountain.svg" height=240 width=760 y=5)
-        circle(name="a" x="point(25, 230)" target="points")
-        circle(name="b" x="point(185, 230)" target="points")
-        circle(name="x" x="point(573, 7)" target="")
-        circle(name="y" x="point(573, 230)" target="")
-
-        path.fill.red(x="angle(x,a,b)" label="23°" target="angles ang" size=60)
-        path.fill.blue(x="angle(x,b,y)" label="29°" target="ang1" size=50)
-        path.fill(name="angle-b" x="angle(b,x,a)" label="β" target="b angles" size=100)
-        path.fill.green(name="angle-a" x="angle(a,b,x)" label="α" target="a angles" size=25)
-        path(x="angle(b,y,x)")
-
-        path.yellow(x="segment(a,b)" target="base right" label="5km")
-        path.yellow(x="segment(b,x)" target="")
-        path.yellow(name="side-d" x="segment(a,x)" target="d right" label="d")
-        path.yellow(x="segment(b,y)" target="right")
-        path.yellow(x="segment(x,y)" target="right" label="height")
-
-The surveyors in India measured the angle of the top of a mountain from [two
-different positions](target:points), [{.yellow} 5km apart](target:base).
-The results were [{.red} 23°](target:ang) and [{.blue} 29°](target:ang1).
-
-Because [{.green} angle α](target:a) is a [supplementary angle](gloss:supplementary-angles),
-we know that it must be [[151]]°. _{span.reveal(when="blank-0")}Now we can use the sum of the
-internal angles of a triangle to work out that [angle β](target:b) is [[6]]°._
-
-{.reveal(when="blank-1")} Now we know [all three angles](target:angles) of the triangle, as well as
-[{.yellow} one of the sides](target:base). This is enough to use the [[sine rule|cosine rule]]
-to find the distance [_d_](target:d):
-
-    table.eqn-system
-      tr.reveal(when="blank-2")
-        td.md `("sin" pill("151°","green","a")) / blank(d,5)`
-        td.md `= ("sin" pill("6°","","b")) / blank(5,d)`
-      tr.reveal(when="blank-3 blank-4")
-        td.md `d`
-        td.md `= "sin" pill("151°","green","a") × pill(5,"yellow","base") / ("sin" pill("6°","","b"))`
-      tr.reveal(when="blank-3 blank-4" delay=1000)
-        td
-        td.md `= pill("23.2 km","yellow","d")`
-
-{.reveal(when="blank-3 blank-4" delay=2000)} There is one final step: let’s have
-a look at the [{.yellow}big, right-angled triangle](target:right). We already know the
-length of the hypotenuse, but what we really need is the [[opposite|adjacent]]
-side. _{span.reveal(when="blank-5")}We can find it using the definition of
-*sin*:_
-
-    table.eqn-system
-      tr.reveal(when="blank-5" delay=1000)
-        td.md `"sin" pill("23°","red","ang")`
-        td.md `= blank("height",23) / blank(23,"height")`
-      tr.reveal(when="blank-6 blank-7")
-        td.md `"height"`
-        td.md `= "sin" pill("23°","red","ang") × pill(23,"yellow","d")`
-      tr.reveal(when="blank-6 blank-7" delay=1000)
-        td
-        td.md `= pill("8.987 km","yellow","height")`
-
-{.reveal(when="blank-6 blank-7" delay=2000)} And that is very close to the
-actual height of Mount Everest, the highest mountain on Earth: 8,848m.
 :::
 
 ---
-> id: mountains-1
+> id: trig-ratios
+> section: trig-ratios
+> goals: s0
 
-This explanation greatly simplifies the extraordinary work done by the
-mathematicians and geographers working on the Great Trigonometrical Survey. They
-started from sea level at the beach, measured thousands of kilometers of
-distance, built surveying towers across the entire country and even accounted
-for the curvature of Earth.
 
-    figure: x-img(src="images/himalaya.jpg" width=760 height=320)
+
+::: column.grow
+
+Let us now try to find the trigonometric ratios for 60 degrees.
+When you hear 60 degress the triangle that comes to mind is [[equilateral|isosceles|scalene]].
+:::
+
+::: column.grow
+{.reveal(when="blank-0")}
+△ABC has an ∠A of 60 degrees.
+
+It is an equilateral triangle. Draw a perpendicular from C to side AB.
+
+
+::: column(width=240)
+
+    x-geopad.sticky(width=240 height=240 tools="move|line" projections="no"): svg
+      circle(name="a" x="point(30,220)" label="A")
+      circle(name="c" x="point(125,80)" label="C")
+      circle(name="b" x="point(220,220)" label="B")
+      circle(name="d" x="line(a,b).midpoint" label="D")
+      path.red(x="angle(c,a,b)" label="60")
+      path.red.reveal(x="angle(d,c,a)" label="30" when="s0")
+      path.blue(x="segment(a,c)" label="2a")
+      path.blue(x="segment(a,b)" )
+      path.blue(x="segment(b,c)" )
+      path.yellow.reveal(x="segment(a,d)" when="blank-4")
+      path.green.reveal(x="segment(a,c)" when="blank-3" label="2a")
+      path.yellow.reveal(x="segment(a,d)" when="blank-4" label="a")
+:::
+
+::: column.grow
+::: .theorem
+{.reveal(when="s0")} ∆ACD is [[congruent|similar]] to ∆CDB.
+
+AD=DB=`1/2`AB
+
+Since ∆ABC is equilateral, AB=BC=AC.
+
+∆ACD is a [[right angle triangle| equilateral]] 
+
+{.reveal(when="blank-3")} If AC=2a, then AD=[[a|3a]]
+
+{.reveal(when="blank-4")} For ∆ACD we have AC=2a and AD=a. We need to find CD. Using pythogoras theorem CD=`blank("a*sqrt(3)","3a","a")`
+
+{.reveal(when="blank-5")}
+Now that we have all the sides:
+
+sin A = sin 60 = `blank("CD","AD","AF")/blank("AC","DF","AF")` _{span.reveal(when="blank-6")} = `a*sqrt(3)/ (2a)` = `sqrt(3)/2`._
+
+cos A = cos 60 = `blank("AD","BC","DF")/blank("AC","DF","AF")` _{span.reveal(when="blank-7")} =  `1/2`._
+
+tan A = tan 60 = `blank("CD","AD","AF")/blank("AD","DF","BC")` _{span.reveal(when="blank-8")} =  `sqrt(3)`._
+
+sin ACD = sin 30 = `blank("AD","BC","AF")/blank("AC","DF","AF")` _{span.reveal(when="blank-9")} = `a/ 2*a` = `1/2`._
+
+cos ACD = cos 30 = `blank("CD","AD","DF")/blank("AC","DF","AF")` _{span.reveal(when="blank-10")} = `a*sqrt(3)/ (2a)` = `sqrt(3)/2`._
+
+tan ACD = tan 30 = `blank("AD","BC","AF")/blank("AC","DF","AD")` _{span.reveal(when="blank-11")} =  `1/sqrt(3)`._
+
+
+:::
+:::
+
+
+---
+> id: trig-ratios3
+> section: trig-ratios3
+
+::: column.grow
+What about 90 degrees and 0 degrees. Let's see if we can easily find the trigonometric ratios of these special angles.
+When we talk about the sine of an angle, we are talking about the ratio of the length of the opposite side of a right triangle to the length of the hypotenuse of the triangle. So, if we have a right triangle with one angle equal to 0 degrees, the opposite side of the triangle will have a length of 0 because it is the side that is perpendicular to the angle. And, if the opposite side has a length of 0, then the ratio of that side to the hypotenuse will also be 0. So, we can say that sin 0 = 0.
+
+:::
+
+::: column(width=300)
+
+    x-geopad.sticky(width=300): svg
+      circle(name="a" cx=40 cy=220 label="A")
+      circle(name="c" cx=260 cy=220 label="C")
+      circle.move(name="b" cx=260 cy=80 label="B")
+
+      path.fill.green(x="polygon(a,b,c)" target="gap")
+
+      path.dark(x="polygon(a,b,c)")
+      path.blue.reveal(x="segment(b,c)" label="height"  delay="1000" target="height")
+      path.blue.reveal(x="angle(b,a,c).sup" delay="1000" target="height")
+      path.red.reveal(x="segment(a,c)" label="base" delay="1000" target="base")
+
+
+::: column.grow
+Let's try this out with a simple exercise. Check the triangle to the side. Move the top of the triangle(B) towards C. As you can see, as the angle decreases, the size of BC(height) also decreases.
+
+In this triangle sinA=[[BC/AB]]. But as ∠A becomes 0 BC also tends towards [[0]]. And if BC=0 then `BC/AC`=[[0]]. That means sinA=[[0]]
+:::
+
+
+::: column(width=300)
+
+    x-geopad.sticky(width=300): svg
+      circle.move(name="d" cx=40 cy=220 label="A")
+      circle(name="f" cx=260 cy=220 label="C")
+      circle(name="e" cx=260 cy=80 label="B")
+
+      path.fill.green(x="polygon(d,e,f)" target="gap")
+
+      path.dark(x="polygon(d,e,f)")
+      path.blue.reveal(x="segment(e,f)" label="height"  delay="1000" )
+      path.blue.reveal(x="angle(e,d,f).sup" delay="1000" )
+      path.red.reveal(x="segment(d,f)" label="base" delay="1000" )
+
+
+::: column.grow
+As in the previous example, move A towards C. We can see that as the ∠A increases towards 90 degrees, AB becomes almost equal to [[BC]].
+
+sinA=`BC/AB`. When ∠A=90 BC is almost equal to AB sin 90=`BC/AB`
+:::
+
+::: column.grow
+::: theorem
+The below table shows the most common angles and their trigonometric ratios.
+|| 0| 30 | 45  | 60| 90 |
+|----| ------------- |-------------  |-----        | ----------------------    |-----------------
+|Sin  |    0           |        `1/2`       |     `1/sqrt(2)`       |      `sqrt(3)/2`                    |1|
+|Cos   |    1           |        `sqrt(3)/2`      |     `1/sqrt(2)`       |       `1/2`                    |  0         |
+|Tan   |    0           |        `1/sqrt(3)`      |      1      |         `sqrt(3)`                  | Not Defined|
+|Cosec   |    Not Defined           |       2    |      `sqrt(2)`     |        `2/sqrt(3)`                   |1|
+|Sec   |    1           |         `2/sqrt(3)`       |       `sqrt(2)`      |       2                   | Not Defined |
+|Cot   |     Not Defined            |       `sqrt(3)`       |      1       |       `1/sqrt(3)`                   |0|
+:::
+:::
+
+---
+> id: trig-complimentary
+> section: trig-complimentary
+
+### Trigonometric Ratios Of Complementary Angles
+
+::: column(width=240)
+
+    x-geopad(width=240 height=240): svg
+      circle(name="a" x="point(30,220)" label="A")
+      circle(name="b" x="point(160,80)" label="B")
+      circle(name="c" x="point(160,220)" label="C")
+      path.red(x="angle(a,c,b)" label="90")
+      path.green(x="segment(a,b)" )
+      path.blue(x="segment(b,c)" )
+      path.yellow(x="segment(a,c)" )
+
+:::
+
+::: column.grow
+Two angles are said to be complementary if the sum of their angles is 90 degrees. In triangle ABC, the pair of complementary angles are [[A,B|A,C|B,C]]
+
+{.reveal(when="blank-0")} So A+B=90
+
+sin A=`BC/AB` cos A=`AC/AB` tan A= `BC/AC` cosec A =`AB/BC` sec A=`AB/AC` cot A=`AC/BC`
+
+Let us now define trigonometric ratios for angle C in terms of it's complementary angle.
+
+C=90-A
+
+So sin C= sin(90-A)=`AC/AB`. But `AC/AB` is nothing but [[cosA|sinA|tanA]]
+
+{.reveal(when="blank-1")}
+cos C= cos (90-A)=`BC/AB`=[[sinA|cosA|tanA]]
+tan C= tan (90-A)=`AC/BC`=[[cotA|cosA|sinA]]
+
+::: .theorem
+
+sin(90-A)=cosA         cosec(90-A)=secA
+
+cos(90-A)=sinA         sec(90-A)=cosec(A)
+
+tan(90-A)=cot A        cot(90-A)=tanA
+
+Note : tan 0° = 0 = cot 90°, sec 0° = 1 = cosec 90° and sec 90°, cosec 0°, tan 90° and
+cot 0° are not defined.
+:::
+
+:::
+
+
+---
+> id: trig-identities
+
+### Trigonometric Identities
+Trigonometric identities are important to learn because they allow us to solve equations involving trigonometric functions. These identities are based on the fundamental relationships between the angles and sides of triangles, and they can be used to simplify expressions, to find the exact values of trigonometric functions, and to prove other mathematical results. They are a fundamental tool in mathematics, and they are used in a wide range of applications, from geometry and calculus to engineering and physics.
+
+Let us look at identifying some trigonometric identities.
+
+::: column(width=240)
+
+    x-geopad(width=240 height=240): svg
+      circle(name="a" x="point(30,220)" label="A")
+      circle(name="b" x="point(160,80)" label="B")
+      circle(name="c" x="point(160,220)" label="C")
+      path.red(x="angle(a,c,b)" label="90")
+      path.green(x="segment(a,b)" )
+      path.blue(x="segment(b,c)" )
+      path.yellow(x="segment(a,c)" )
+
+:::
+
+::: column.grow
+
+Given the triangle ABC, the identity we already know is `AC^2+BC^2=AB^2`
+
+::: .theorem
+If we have to rephrase the above equation in terms of sin and cos, how can we do it? We know that sin and cos have ratios with the hypotenuse in the denominator.
+So, we need to divide each term in the equation with `AC^2/blank(AB^2,AC^2,BC^2)+BC^2/blank(AB^2,AC^2,BC^2)=AB^2/blank(AB^2,AC^2,BC^2)`
+
+{.reveal(when="blank-2")} `(cosA)^2+(sinA)^2=1`
+
+`cos^2 A+sin^2 A=1`
+
+This is true for all A such that 0° ≤ A ≤ 90°. So, this is a trigonometric identity.
+
+If we have to get an identity in terms of tan we need to divide `AC^2+BC^2=AB^2` with the square of [[AC|AB|BC]]
+
+{.reveal(when="blank-2")} `1 +tan^2 A=sec^2 A`
+
+Similarly we can find `1 +cot^2 A=cosec^2 A`
+:::
+
+Using these identities, we can express each trigonometric ratio in terms of other
+trigonometric ratios, i.e., if any one of the ratios is known, we can also determine the
+values of other trigonometric ratios.
+
+:::

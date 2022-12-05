@@ -59,6 +59,15 @@ export function trigonometryIntro($step: Step){
     ['ratio', '', '']);
 }
 
+export function trigRatios($step: Step){
+  const $geopad = $step.$('x-geopad') as Geopad;
+  $geopad.switchTool('line');
+  waitToDraw($step, $geopad,
+    ['segment(c,d)'],
+    ['blue'],
+    ['ratio', '', '']);
+}
+
 export function circumcircle($step: Step) {
   const $geopad = $step.$('x-geopad') as Geopad;
 
