@@ -1,4 +1,4 @@
 #!/bin/sh
 
-amazon-linux-extras install coreutils=8.30
+yum -y update coreutils
 npm start
