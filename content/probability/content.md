@@ -340,35 +340,214 @@ die) to a triangle (two dice) and then to a “bell-shaped” curve. This is kno
 as the __central limit theorem__, and the bell-shaped curve is called the
 __normal distribution__.
 
-
 ---
 
+## Probability - A theoretical approach
 
-## Probability Trees and Venn Diagrams
+> section: theoretical
 
-> section: trees
-> sectionStatus: dev
+In Class IX, we defined the experimental or empirical probability P(E) of an event E as 
 
-{.todo} TODO
+{.text-center} P(E) = `"Number of trials in which the event happened"/"Total number of trials."`
 
----
-> id: galton-board
+The empirical interpretation of probability can be applied to every event associated with an experiment which can be repeated a large number of times. The requirement of repeating an experiment has some limitations, as it may be very expensive or unfeasible in many situations. 
 
-::: .box.red
-#### Galton Board
+Of course, it worked well in coin tossing or die throwing experiments. But how about repeating  the experiment of launching a satellite in order to compute the empirical probability of its failure during launching, or the repetition ofgthe phenomenon of an earthquake to compute the empirical probability of a multi-storeyed building getting destroyed in an earthquake? 
 
-Here is a Galton Board:
+In experiments where we are prepared to make certain assumptions, the repetition of an experiment can be avoided, as the assumptions help in directly calculating the exact (theoretical) probability. The assumption of equally likely outcomes (which is valid in many experiments, as in the two examples above, of a coin and of a die) is one such assumption that leads us to the following definition of probability of an event. 
 
-    figure
-      svg(width=400 height=445).galton
-      .ballTable.var(:html="ballTable(rows, p)")
-    p.btn-row.no-voice
-      button.btn Drop one ball
-      button.btn Drop 10 balls
-      button.btn Drop 100 balls
+The theoretical probability (also called classical probability) of an event E, written as P(E), is defined as
 
-The Galton Board has ${rows}{rows|8|2,9,1} rows. The probability the ball bounces to the **right** is ${p}{p|0.5|0,1,0.1}.
+::: .theorem
+{.text-center} P(E) = `"Number of outcomes favourable to E"/ "Number of all possible outcomes of the experiment"`
 :::
+
+So to calculate probabilities we need to follow 3 steps for all problems.
+
+1. Define E.
+2. Find number of outcomes favourable to E.
+3. Find number of all possible outcomes of the experiment.
+
+Let's apply this theoretical formula to calculate the probabilities of some scenarios without actually performing the experiments.
+
+---
+
+### Find the probability of getting a head when a coin is tossed once.
+
+Approach:
+
+1. Define E. Let E be "getting a head"
+2. Number of outcomes favourable to E. [[1|2]]
+3. Number of all possible outcomes of the experiment. [[2|1]]
+
+Hence, P(Getting a head)=[[1/2|1/4|1]]
+
+---
+
+###  A bag contains a red ball, a blue ball and a yellow ball, all the balls being of the same size. Kritika takes out a ball from the bag without looking into it. What is the probability that she takes out the red ball
+
+Approach:
+
+1. Define E. Let E be "takes out red ball"
+2. Number of outcomes favourable to E. [[1|2|3]]
+3. Number of all possible outcomes of the experiment. [[3|2|1]]
+
+Hence, P(E)=[[1/3|1/4|1/2]]
+
+::: .theorem
+__{.m-blue} Elementary event:__ An event having only one outcome of the experiment.
+
+The sum of the probabilities of all the elementary events of an experiment is [[1]].
+:::
+
+---
+
+###  Suppose we throw a die once. What is the probability of getting a number greater than 4
+
+Approach:
+
+1. Define E. Let E be getting a number greater than 4.
+2. Number of outcomes favourable to E. [[2]]
+3. Number of all possible outcomes of the experiment. [[6]]
+
+Hence, P(E)=[[1/3|1/4|1/2]]
+
+Is the event, getting a number greater than 4 an elementary event? [[No|Yes]]
+
+Correct. Because the event has [[2]] outcomes.
+
+---
+
+### Complementary Events
+
+In the above example, what is the probability of getting a number less than or equal to 4?
+
+It is [[2/3|1/3|1]]
+
+---
+
+Getting a number less than or equal to 4 is the same same as getting a number "NOT" greater than 4.
+
+So, if E=getting a number greater than 4 then getting a number `<=` 4 is NOT E.
+
+We represent NOT E as `bar(E)`.
+
+In the above example we see E=`1/3` and `bar(E)`=`2/3`.
+
+So P(E)+P(`bar(E)`)=`1/3+2/3`=1.
+
+The event E , representing ‘not E’, is called the complement of the event E. We also say that E and `bar(E)` are complementary events.
+
+::: .theorem
+
+In general, it is true that for an event E,
+
+P( `bar(E)` ) = 1 – P(E)
+:::
+
+Let us continue with our exploration through examples.
+
+### What is the probability of getting a number 8 in a single throw of a die?
+
+Approach:
+
+1. Define E. Let E be getting the number 8.
+2. Number of outcomes favourable to E. [[0]]
+3. Number of all possible outcomes of the experiment. [[6]]
+
+Hence, P(E)=[[0|1/4|1]]
+
+---
+
+### What is the probability of getting a number less than 7 in a single throw of a die?
+
+1. E= getting a number less than 7
+2. Number of outcomes favourable to E. [[6]]
+3. Number of all possible outcomes of the experiment. [[6]]
+
+Hence, P(E)=[[1|1/4|0]]
+
+---
+
+In the first example, where the probability was zero(getting a number 8) it is known as an __{.m-blue} impossible event__.
+
+In the second example, where the probability was 1(getting a number less than 7) it is known as an __{.m-blue} sure event or certain event__.
+
+
+### Two dice are thrown at the same time. What is the probability that the sum of the two numbers appearing on top of the dice is 8.
+
+1. E=sum of two numbers on top of dice is 8
+
+---
+> id: diceprob
+
+This table shows all possible outcomes with X marking the favourable outcomes:
+
+    include mixins
+    table.dice-table
+      tr
+        td X
+        td #[.dice.outline 1]
+        td #[.dice.outline 2]
+        td #[.dice.outline 3]
+        td #[.dice.outline 4]
+        td #[.dice.outline 5]
+        td #[.dice.outline 6]
+      tr
+        td #[.dice.outline 1]
+        td #[.dice #[+dice(1)]] #[.dice #[+dice(1)]]
+        td #[.dice #[+dice(1)]] #[.dice #[+dice(2)]]
+        td #[.dice #[+dice(1)]] #[.dice #[+dice(3)]]
+        td #[.dice #[+dice(1)]] #[.dice #[+dice(4)]]
+        td #[.dice #[+dice(1)]] #[.dice #[+dice(5)]]
+        td #[.dice #[+dice(1)]] #[.dice #[+dice(6)]]
+      tr
+        td #[.dice.outline 2]
+        td #[.dice #[+dice(2)]] #[.dice #[+dice(1)]]
+        td #[.dice #[+dice(2)]] #[.dice #[+dice(2)]]
+        td #[.dice #[+dice(2)]] #[.dice #[+dice(3)]]
+        td #[.dice #[+dice(2)]] #[.dice #[+dice(4)]]
+        td #[.dice #[+dice(2)]] #[.dice #[+dice(5)]]
+        td #[.dice #[+dice(2)]] X #[.dice #[+dice(6)]]
+      tr
+        td #[.dice.outline 3]
+        td #[.dice #[+dice(3)]] #[.dice #[+dice(1)]]
+        td #[.dice #[+dice(3)]] #[.dice #[+dice(2)]]
+        td #[.dice #[+dice(3)]] #[.dice #[+dice(3)]]
+        td #[.dice #[+dice(3)]] #[.dice #[+dice(4)]]
+        td #[.dice #[+dice(3)]] X #[.dice #[+dice(5)]]
+        td #[.dice #[+dice(3)]] #[.dice #[+dice(6)]]
+      tr
+        td #[.dice.outline 4]
+        td #[.dice #[+dice(4)]] #[.dice #[+dice(1)]]
+        td #[.dice #[+dice(4)]] #[.dice #[+dice(2)]]
+        td #[.dice #[+dice(4)]] #[.dice #[+dice(3)]]
+        td #[.dice #[+dice(4)]] X #[.dice #[+dice(4)]]
+        td #[.dice #[+dice(4)]] #[.dice #[+dice(5)]]
+        td #[.dice #[+dice(4)]] #[.dice #[+dice(6)]]
+      tr
+        td #[.dice.outline 5]
+        td #[.dice #[+dice(5)]] #[.dice #[+dice(1)]]
+        td #[.dice #[+dice(5)]] #[.dice #[+dice(2)]]
+        td #[.dice #[+dice(5)]] X #[.dice #[+dice(3)]]
+        td #[.dice #[+dice(5)]] #[.dice #[+dice(4)]]
+        td #[.dice #[+dice(5)]] #[.dice #[+dice(5)]]
+        td #[.dice #[+dice(5)]] #[.dice #[+dice(6)]]
+      tr
+        td #[.dice.outline 6]
+        td #[.dice #[+dice(6)]] #[.dice #[+dice(1)]]
+        td #[.dice #[+dice(6)]] X #[.dice #[+dice(2)]]
+        td #[.dice #[+dice(6)]] #[.dice #[+dice(3)]]
+        td #[.dice #[+dice(6)]] #[.dice #[+dice(4)]]
+        td #[.dice #[+dice(6)]] #[.dice #[+dice(5)]]
+        td #[.dice #[+dice(6)]] #[.dice #[+dice(6)]]
+
+2. Number of outcomes favourable to E = [[5]]
+3. Number of all possible outcomes of the experiment=[[36]]
+
+So P(E)=[[5/36]]
+
+
 
 ---
 
@@ -480,17 +659,6 @@ simply by listing all different possibilities:
 
 Out of the 9 possibilities, there are [[6]] where you need you to switch doors, in order to win.
 This gives a  chance of `6/9 = 2/3` like before.
-
-
----
-
-
-## The Birthday Problem
-
-> section: birthdays
-> sectionStatus: dev
-
-TODO
 
 
 ---

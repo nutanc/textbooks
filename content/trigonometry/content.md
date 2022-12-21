@@ -663,4 +663,173 @@ Using these identities, we can express each trigonometric ratio in terms of othe
 trigonometric ratios, i.e., if any one of the ratios is known, we can also determine the
 values of other trigonometric ratios.
 
+Let us see how we can do this using these identities.
+
+::: .theorem
+If tan A = `1/sqrt(3)`, then, cot A = `blank(sqrt(3),3,1/3)`.
+
+{.reveal(when="blank-4")}Look above and see which identity we can use. We need to choose an identity which has tan in it.
+
+{.reveal(when="blank-4")} Since, `sec^2 A = 1 + tan^2 A = 1+1/3=4/3. sec A= 2/sqrt(3)`
+
+{.reveal(when="blank-4")} The inverse of sec A is nothing but [[cos A|sin A|tan A]]
+
+{.reveal(when="blank-5")} So cos A=`sqrt(3)/2`.
+
+{.reveal(when="blank-5")} Now that we have cos A, we need to pick an identity which has cos in it. 
+
+{.reveal(when="blank-5")}`sin^2A+cos^2A=1`. 
+
+{.reveal(when="blank-5")}So sinA= `blank(sqrt(1-cos^2A),sqrt(1-tan^2A),1-cos^2A)`.
+
+
+
 :::
+
+---
+> id: trig-identities-tools
+
+### Trigonometric Tools
+::: column.grow
+Some of the tools required to solve trignometric ratio problems
+
+__{.m-red}1)Reciprocal rule:__
+
+sinA=`1/cosecA`
+
+cosA=`1/secA`
+
+tanA=`1/cotA`
+
+__{.m-red}2)Quotient rule:__
+
+tanA=`sinA/cosA`
+
+cotA=`cosA/sinA`
+
+__{.m-red}3)Identities:__
+
+`sin^2A+cos^2A=1` ==>  `cos^2A=1-sin^2A` and `sin^2A=1-cos^2A`
+
+`1+tan^2A=sec^2A==>sec^2A-tan^2A=1`. `tan^2A=sec^2A-1`
+
+`cot^2A+1=cosec^2A==>cosec^2A-cot^2A=1` .`cot^2A= cosec^2A-1`
+
+__{.m-red}4)Algebric identities:__
+
+`(a+b)^2=a^2+2ab+b^2`
+
+`(a-b)^2=a^2-2ab+b^2`
+
+`a^2-b^2=(a+b)(a-b)`
+
+`(a+b)^3=a^3+b^3+3ab(a+b)`
+
+`(a-b)^3=a^3-b^3-3ab(a-b)`
+
+Tips to solve problems using Trignometric ratios and identities:
+
+1)Always start from the complex side-  no. of terms,no. of operations,trignometric ratio,presence of root im the question.
+Eg:1)`sqrt((1+cosA)/(1-cosA))`=cosecA+cotA;start from [[LHS|RHS]] 
+{.reveal(when="blank-1")}
+as it has [[no. of terms|no. of operations|trignometric ratio|presence of root]]
+{.reveal(when="blank-4")}
+:::
+
+---
+> id: trig-applications
+
+## Applications of trigonometry
+::: column.grow
+ Before we get into some real world examples of trigonometry, lets define some common terms we use. Mainly, line of sight, horizontal level, angle of elevation and angle of depression.
+
+::: .sticky-wrap
+
+    figure.sticky.mountain
+      x-geopad.no-background(width=800 height=350): svg
+        image(href="images/mountain.svg" height=240 width=770 y=30)
+        image(href="images/stickman.svg" height=75 width=50 y=210 x=-10)
+        image(href="images/stickman.svg" height=75 width=50 y=7 x=575)
+        circle(name="a" x="point(25, 230)" target="points" label="P1")
+        circle(name="x" x="point(573, 30)" target="" label="P2")
+        circle(name="y" x="point(573, 230)" target="" label="P3")
+
+        path.fill.red(x="angle(x,a,y)" label="Angle of elevation" target="angles ang" size=60)
+        path.fill.blue(name="angle-b" x="angle(y,x,a)" label="Angle of depression" target="b angles" size=100)
+        path(x="angle(b,y,x)")
+
+        path.yellow(x="segment(a,y)" target="base right" label="horizontal level")
+        path.yellow(name="side-d" x="segment(a,x)" target="d right" label="line of sight")
+        path.yellow(x="segment(x,y)" target="right" label="height")
+
+:::
+
+Look at the figure above. A person is looking at the top of the hill from the ground level and another person is watchin the ground from the top of the hill.
+In this figure, the line P1P2 drawn from the eye of P1 to the top of the
+mountain is called the [{.yellow} line of sight](target:d). P1 is looking at the top of the mountain. The
+angle formed by the line of sight with the horizontal, is called the [{.red} angle of elevation ](target:ang) of the top of the mountain from the eye of the student.
+Thus, the line of sight is the line drawn from the eye of an observer to the point
+in the object viewed by the observer. The angle of elevation of the point viewed is
+the angle formed by the line of sight with the horizontal when the point being viewed is
+above the horizontal level, i.e., the case when we raise our head to look at the object.
+
+Now, consider the situation of P2. P2 is standing on the moutain and looking down at P1. In this case, the line of
+sight is below the horizontal level. The angle so formed by the line of sight with the
+horizontal is called the [{.blue} angle of depression ](target:b).
+Thus, the angle of depression of a point on the object being viewed is the angle
+formed by the line of sight with the horizontal when the point is below the horizontal
+level, i.e., the case when we lower our head to look at the point being viewed.
+
+If you want to find the height of the mountain
+without actually measuring it, what information do you need? You would need to know
+the following:
+
+1. The distance P1P3 at which P1 is standing from the foot of the mountain.
+2. The angle of elevation.
+3. The height of P1.
+
+We need the height of P1 because we need to add that as the triangle is formed only till the horizontal level.
+
+Given that we know the distance of P1P3 and the angle the trigonometric ratio we can use to find the height is [[tan(angle of elevation) | sin(angle of elevation) | cos(angle of elevation)]]
+
+
+---
+> id: trig-applicationsgame
+
+So the height of the mountain is (tan(angle of elevation)*Distance of P1 from the mountain)+ height of P1.
+### Text based adventure game
+
+Percy is on a quest. His goal is to find the flower of life so that he can take it back to help his friend who was stabbed by a minotaur.
+He starts on the journey and walks through the vast country side. Suddenly he comes upon a big chasm. He is at the edge of the chasm and the other edge is above him at some distance.
+His keen sense of angles tells him that if he looks up to the top of the other end, the angle of elevation is 60 degrees. But unfortunately Percy is bad at trigonomtery.
+
+This is where you come in. Athena has appointed you as the guardian angel of Percy. Percy can reach out to at any time and ask you for help.
+
+Percy: I am stuck. I am at the end of the chasm. What should I do?
+
+You: What is the angle of elevation?
+
+Percy: I think it is around 60 degrees.
+
+You: On what mountain are you standing?
+
+Percy: On mount Sicarus.
+
+You: What is the mountain in front of you?
+
+Percy: Mount Janus.
+
+You: Good. I find from the record books that mount Sicarus is 700 meters in height and mount Janus is 737 meters in height. So the height of the chasm you need to scale is [[37]] meters.
+
+{.reveal(when="blank-0")} Percy: But how will the height help me. Should I set the magic ladder to 37 meters? You know we have to keep the right setting. If we set it to too long or too short the magic ladder will self destruct.
+
+{.reveal(when="blank-0")} You: [[No|Yes]]
+
+{.reveal(when="blank-1")} You: That's the height you need to scale. But the length you need to cross is different. Let's see what facts we have. We know the angle is 60 degrees and the opposite side is 37 meters. So let me apply my trigonometric knowledge. We can use the following trigonometric ratio: [[sin 60| cos 60| tan 60]].
+
+{.reveal(when="blank-2")} You: Solving for the sin 60 equation we get the length as [[42.8|43.7|43.0]].
+
+{.reveal(when="blank-3")} Percy: Thanks.
+
+{.reveal(when="blank-3")} He sets the setting on the magic ladder to 42.8 and crosses the chasm. The flower of life is on mount Janus. he picks it up and goes to his friend and saves him.
+
