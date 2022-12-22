@@ -140,12 +140,29 @@ quadratic equations and to understand their graphs.
 
 
 
-## Binomial Expressions
+## Quadratic Equations
 
 > section: binomials
 > sectionStatus: dev
 
-TODO
+A quadratic equation in the variable x is an equation of the form of `ax^2+ bx + c = 0`, where a, b, c are real numbers, a  ≠ 0.
+
+Few examples:
+
+`2x^2 + x – 300 = 0` is a quadratic equation.
+
+Similarly, 
+
+`2x^2 – 3x + 1 = 0`
+ 
+`4x–3x^2 +2 = 0`
+
+`1 – x^2  + 300 = 0` are also quadratic equations.
+
+In fact, any equation of the form p(x) = 0, where p(x) is a polynomial of degree
+2, is a quadratic equation. But when we write the terms of p(x) in descending order of
+their degrees, then we get the standard form of the equation. That is, `ax^2 + bx + c = 0`,
+a ≠ 0 is called the **standard form of a quadratic equation.**
 
 
 
