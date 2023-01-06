@@ -33,6 +33,12 @@ export function intro($step: Step) {
   $geopad.switchTool('line');
 }
 
+export function intro1($step: Step) {
+  // empty
+  const $geopad = $step.$('x-geopad') as Geopad;
+  $geopad.switchTool('line');
+}
+
 export function distance($step: Step) {
   const $geopad = $step.$('x-geopad') as Geopad;
   $geopad.showGesture('b', 'a');

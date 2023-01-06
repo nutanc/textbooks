@@ -25,6 +25,10 @@ We have seen the graph of y = `ax^2 + bx + c` (a ≠ 0), is a parabola. In fact,
 
 It helps us to study geometry using algebra, and understand algebra with the help of geometry. Because of this, coordinate geometry is widely applied in various fields such as physics, engineering, navigation, seismology and art!
 
+---
+> id: intro1
+
+
     figure
       x-geopad(width=600 height=400 x-axis="-1,10,1" y-axis="-1,10,1" complex padding=5 tools="line"): svg
         circle.red(x="point(4,8)" name="a" label="a")
